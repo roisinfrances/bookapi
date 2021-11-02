@@ -28,7 +28,7 @@ exports.show = function (req, res, next){
 exports.update = function (req, res, next) {
     const bookitem = booklist.find((books) => books.id == req.params.id)
     if (!bookitem){
-        return (next(createError(400, "no book with that id")))
+        return (next(createError(404, "no book with that id")))
     }
     booklist = booklist.map((books) => {
         if (books.id == req.params.id) {
